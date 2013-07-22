@@ -18,5 +18,16 @@
     <ClCompile Include="parserAppMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="winProc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="winProc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="STRUCT_Window_Classes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
