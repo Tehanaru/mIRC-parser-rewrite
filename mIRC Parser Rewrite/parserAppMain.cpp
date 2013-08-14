@@ -4,6 +4,7 @@
 	//	Each header include is commented with a description of what functions and structures	//
 	//	can be found in that file and its associated source.									//
 	//////////////////////////////////////////////////////////////////////////////////////////////
+#define UNICODE
 
 			//Library Includes
 #include <Windows.h>		//Required for Windows API
@@ -12,23 +13,33 @@
 
 			//Project Header Includes
 #include "winProc.h"
+#include "STRUCT_Window_Classes.h"
+#include "ezWinAPI_Functions.h"
 
 
 
-
-int winMain(HINSTANCE parserInstance, HINSTANCE prevInstance, LPSTR lpCmndLine, int nCmndShow)
+int WINAPI WinMain(HINSTANCE parserInstance, HINSTANCE prevInstance, LPSTR lpCmndLine, int nCmndShow)
 {
+	std::shared_ptr<LPSTR> wnClassName;
+	wnClassName = makeStrLPSTR("Main Window Class");
 
-	
-	WNDCLASSEX wcBaseWnd;	//Replace this with a custom window class
-    HWND hMainWnd;			//main window variable
+	if(!InitApplication(parserInstance, wnClassName))
+	{
+		MessageBoxA(NULL, "Window Registration Failed!", "ERROR", MB_ICONERROR | MB_OK);
+		return 1;
+	}
+
+	if(!InitInstance(parserInstance, nCmndShow, wnClassName))
+	{
+		MessageBoxA(NULL, "Window Creation Failed!", "ERROR", MB_ICONERROR | MB_OK);
+		return 1;
+	}
+
+
+	HWND hMainWnd;			//main window variable
     MSG Msg;				//main message variable
 
-	//Things that need to happen here before we start the main loop
 	
-	//Register the window class + Error checking
-
-	//Create the window + error checking
 
 
     while(GetMessage(&Msg, NULL, 0, 0) > 0)

@@ -78,12 +78,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ezWinAPI_Functions.cpp" />
     <ClCompile Include="parserAppMain.cpp" />
+    <ClCompile Include="STRUCT_Window_Classes.cpp" />
     <ClCompile Include="winProc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ezWinAPI_Functions.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="STRUCT_Window_Classes.h" />
     <ClInclude Include="winProc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="parserResources.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
